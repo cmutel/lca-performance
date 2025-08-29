@@ -7,7 +7,7 @@ bd.projects.set_current("ecoinvent-3.11-cutoff")
 
 db = bd.Database("ecoinvent-3.11-cutoff")
 
-fus = [db.random() for _ in range(20)]
+fus = [db.random() for _ in range(500)]
 
 m = (
     'ecoinvent-3.11',
@@ -26,7 +26,7 @@ profiler = Profiler()
 profiler.start()
 
 for node in fus:
-    lca.lci(demand=demand)
+    lca.lci(demand={node.id: 1})
     lca.lcia_calculation()
 
 profiler.stop()
