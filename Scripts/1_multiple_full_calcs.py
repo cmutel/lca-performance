@@ -7,7 +7,7 @@ bd.projects.set_current("ecoinvent-3.11-cutoff")
 
 db = bd.Database("ecoinvent-3.11-cutoff")
 
-fus = [db.random() for _ in range(500)]
+fus = [db.random() for _ in range(2500)]
 
 m = (
     'ecoinvent-3.11',
